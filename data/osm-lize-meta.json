@@ -1,0 +1,428 @@
+{
+  "source": "https://overpass-api.de/api/interpreter",
+  "fetched_at": "2026-11-24T04:52:10.395976+00:00",
+  "origin_wgs84": [
+    39.8653,
+    116.3218
+  ],
+  "radius_m": 1800,
+  "projection": "EPSG:32650 / WGS 84 / UTM zone 50N",
+  "element_count": 1549,
+  "element_types": {
+    "node": 213,
+    "way": 1335,
+    "relation": 1
+  },
+  "highway_counts": {
+    "motorway_junction": 10,
+    "traffic_signals": 61,
+    "crossing": 56,
+    "bus_stop": 86,
+    "trunk": 57,
+    "trunk_link": 58,
+    "primary": 69,
+    "tertiary": 142,
+    "residential": 165,
+    "tertiary_link": 24,
+    "footway": 122,
+    "unclassified": 24,
+    "secondary": 42,
+    "service": 36,
+    "steps": 13,
+    "primary_link": 4,
+    "construction": 18,
+    "cycleway": 30,
+    "living_street": 1,
+    "path": 3,
+    "secondary_link": 3,
+    "rest_area": 1
+  },
+  "building_count": 302,
+  "named_buildings": [
+    {
+      "type": "way",
+      "id": 244009850,
+      "name": "北京全路通信信号研究院有限公司",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 244017357,
+      "name": "亿客隆家居体验馆",
+      "building": "retail",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 320789931,
+      "name": "金泰丽湾公寓",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 494704290,
+      "name": "实验楼",
+      "building": "school",
+      "height": null,
+      "levels": "5"
+    },
+    {
+      "type": "way",
+      "id": 494704291,
+      "name": "教学二号楼",
+      "building": "school",
+      "height": null,
+      "levels": "4"
+    },
+    {
+      "type": "way",
+      "id": 494704292,
+      "name": "教学一号楼",
+      "building": "school",
+      "height": null,
+      "levels": "3"
+    },
+    {
+      "type": "way",
+      "id": 494704293,
+      "name": "办公楼",
+      "building": "school",
+      "height": null,
+      "levels": "4"
+    },
+    {
+      "type": "way",
+      "id": 539793908,
+      "name": "中华人民共和国审计署",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 539793911,
+      "name": "新青海大厦",
+      "building": "yes",
+      "height": "160",
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 539793943,
+      "name": "北京徽都大酒店",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 539793973,
+      "name": "北京石家庄商务酒店",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 545437445,
+      "name": "报告厅&图书馆",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 560874479,
+      "name": "体育馆",
+      "building": "yes",
+      "height": null,
+      "levels": "3"
+    },
+    {
+      "type": "way",
+      "id": 568979330,
+      "name": "丽泽SOHO",
+      "building": "yes",
+      "height": "207",
+      "levels": "46"
+    },
+    {
+      "type": "way",
+      "id": 638714862,
+      "name": "通用时代中心C座",
+      "building": "commercial",
+      "height": "120",
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 638714863,
+      "name": "通用时代中心A座",
+      "building": "commercial",
+      "height": "95",
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 638714864,
+      "name": "中华保险大厦",
+      "building": "yes",
+      "height": "150",
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 638714872,
+      "name": "晋商联合大厦",
+      "building": "yes",
+      "height": "100",
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 701781870,
+      "name": "居然之家",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 809045071,
+      "name": "东方威尼斯国际酒店",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 809045072,
+      "name": "太平桥街道办事处",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 809045076,
+      "name": "全包圆整体家居体验馆",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 809045084,
+      "name": "西三环红木街",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 810763742,
+      "name": "新年华购物中心",
+      "building": "retail",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 891798992,
+      "name": "北京平安金融中心(基本完工)",
+      "building": "office",
+      "height": "50",
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 891798993,
+      "name": "远洋锐中心(基本完工)",
+      "building": "office",
+      "height": "110",
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 892935516,
+      "name": "7天酒店",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 892935517,
+      "name": "蓝源写字楼",
+      "building": "office",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 908425764,
+      "name": "中国商标大楼",
+      "building": "commercial",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 909965868,
+      "name": "顺和国际",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 910298448,
+      "name": "美克大厦",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 920645083,
+      "name": "百安居",
+      "building": "retail",
+      "height": null,
+      "levels": "3"
+    },
+    {
+      "type": "way",
+      "id": 988464311,
+      "name": "C座",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 988464312,
+      "name": "A座",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 1022465323,
+      "name": "北京天福缘茶叶市场",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 1022465326,
+      "name": "北京音像大厦",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 1029920420,
+      "name": "丰益商务楼",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 1038124169,
+      "name": "6号楼",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 1038124170,
+      "name": "5号楼",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 1038124176,
+      "name": "11号楼",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 1038124177,
+      "name": "12号楼",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 1095088002,
+      "name": "平安幸福汇",
+      "building": "retail",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 1095088003,
+      "name": "龙湖北京丽泽天街",
+      "building": "retail",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 1095088004,
+      "name": "北京厦航嘉年华酒店",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 1115711471,
+      "name": "摩托车学员服务中心",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 1115712689,
+      "name": "众诚连锁",
+      "building": "yes",
+      "height": null,
+      "levels": null
+    },
+    {
+      "type": "way",
+      "id": 1369817059,
+      "name": "宝隆大厦",
+      "building": "yes",
+      "height": null,
+      "levels": "3"
+    },
+    {
+      "type": "way",
+      "id": 1470161262,
+      "name": "通用时代中心B座",
+      "building": "commercial",
+      "height": null,
+      "levels": null
+    }
+  ],
+  "osm_base": "2026-11-24T04:50:36Z"
+}

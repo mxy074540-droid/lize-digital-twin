@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#cad9d8" />
+    <meta name="description" content="北京丽泽金融商务区 OSM GIS 数字孪生，基于 Blender、Draco 与 Three.js 的交互式三维城市展示。" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307151b'/%3E%3Cpath d='M16 42V22h8l8 12 8-12h8v20h-8V33l-8 11-8-11v9z' fill='%238bd8c5'/%3E%3C/svg%3E" />
+    <title>丽泽 · 城市之眼 | LIZE DIGITAL TWIN</title>
+    <script type="module" crossorigin src="./assets/index-BiiqLYMH.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C4CGTVjp.css">
+  </head>
+  <body>
+    <svg class="icon-defs" aria-hidden="true">
+      <defs>
+        <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/></symbol>
+        <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z"/></symbol>
+        <symbol id="icon-orbit" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="10" ry="5" transform="rotate(-35 12 12)"/><path d="m18 3 2 2-2 2"/></symbol>
+        <symbol id="icon-tag" viewBox="0 0 24 24"><path d="M20 13 11 22 2 13V3h10l8 8a1.4 1.4 0 0 1 0 2Z"/><circle cx="7" cy="8" r="1.5"/></symbol>
+        <symbol id="icon-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+        <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+        <symbol id="icon-reset" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 2.3 8.2M3 4v6h6"/></symbol>
+        <symbol id="icon-expand" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></symbol>
+        <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+        <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+        <symbol id="icon-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"/></symbol>
+        <symbol id="icon-walk" viewBox="0 0 24 24"><circle cx="13" cy="4" r="2"/><path d="m10 21 2-6-3-3 2-4 4 2 2 4M5 13l3-4 3-1M12 15l4 6"/></symbol>
+      </defs>
+    </svg>
+
+    <div id="app">
+      <div id="scene" aria-label="丽泽商务区三维场景"></div>
+      <div id="labels"></div>
+      <section class="roam-hud" id="roam-hud" aria-live="polite">
+        <div class="roam-status"><span class="live-dot"></span><strong id="roam-mode">步行 · 1.7 m</strong><span>FREE ROAM</span></div>
+        <div class="roam-help"><span><kbd>W A S D</kbd> 移动</span><span><kbd>鼠标</kbd> 视角</span><span><kbd>F</kbd> 步行 / 飞行</span><span><kbd>SPACE / C</kbd> 升降</span><span><kbd>SHIFT</kbd> 加速</span></div>
+        <div class="roam-actions"><button id="roam-toggle-mode" type="button">切换飞行模式</button><button id="roam-exit" type="button">退出漫游 · ESC</button></div>
+        <div class="roam-crosshair"></div>
+      </section>
+      <div class="scene-vignette"></div>
+      <div class="scene-grain"></div>
+
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="返回全景">
+          <span class="brand-mark"><i></i><i></i><i></i></span>
+          <span class="brand-copy"><strong>LIZE</strong><small>DIGITAL TWIN</small></span>
+        </a>
+        <div class="topbar-center"><span class="live-dot"></span>SCENE ONLINE<span class="topbar-divider"></span><span id="beijing-time">--:--:--</span> CST</div>
+        <div class="topbar-right"><span>BLENDER × THREE.JS</span><span class="version">V.02</span></div>
+      </header>
+
+      <main class="hero">
+        <div class="eyebrow"><span></span>BEIJING · FENGTAI</div>
+        <h1><span>丽泽</span><em>城市之眼</em></h1>
+        <p class="hero-en">LIZE FINANCIAL<br />BUSINESS DISTRICT</p>
+        <p class="hero-desc">在新金融天际线之间，探索一座持续生长的城市。</p>
+        <div class="stats" id="stats"></div>
+        <button class="primary-action" id="tour-button"><span>开启地标巡游</span><svg><use href="#icon-arrow"></use></svg></button>
+        <button class="roam-action" id="roam-button"><svg><use href="#icon-walk"></use></svg><span>进入自由漫游</span><small>WALK / FLY</small></button>
+      </main>
+
+      <aside class="toolbar" aria-label="场景控制">
+        <button class="tool-button" data-action="roam" aria-label="自由漫游" title="自由漫游"><svg><use href="#icon-walk"></use></svg><span>漫游</span></button>
+        <button class="tool-button" data-action="night" aria-label="切换昼夜" title="切换昼夜 · N"><svg><use href="#icon-sun"></use></svg><span>昼夜</span></button>
+        <button class="tool-button" data-action="rotate" aria-label="自动环绕" title="自动环绕"><svg><use href="#icon-orbit"></use></svg><span>环绕</span></button>
+        <button class="tool-button active" data-action="labels" aria-label="显示或隐藏标注" title="显示或隐藏标注"><svg><use href="#icon-tag"></use></svg><span>标注</span></button>
+        <button class="tool-button" data-action="tour" aria-label="地标巡游" title="地标巡游"><svg><use href="#icon-play"></use></svg><span>巡游</span></button>
+        <span class="toolbar-line"></span>
+        <button class="tool-button" data-action="reset" aria-label="重置视角" title="重置视角 · R"><svg><use href="#icon-reset"></use></svg><span>复位</span></button>
+        <button class="tool-button" data-action="fullscreen" aria-label="全屏" title="全屏"><svg><use href="#icon-expand"></use></svg><span>全屏</span></button>
+      </aside>
+
+      <section class="detail-panel" id="detail-panel" aria-live="polite">
+        <button class="detail-close" id="detail-close" aria-label="关闭详情"><svg><use href="#icon-close"></use></svg></button>
+        <div class="detail-index" id="detail-index">01</div>
+        <div class="detail-category" id="detail-category">城市地标</div>
+        <h2 id="detail-name">丽泽 SOHO</h2>
+        <div class="detail-en" id="detail-en">LIZE SOHO</div>
+        <p id="detail-desc"></p>
+        <div class="detail-metrics" id="detail-metrics"></div>
+        <div class="detail-foot"><span>ARCHITECTURE / URBAN / FUTURE</span><svg><use href="#icon-layers"></use></svg></div>
+      </section>
+
+      <aside class="minimap" aria-label="区域小地图">
+        <div class="minimap-head"><span>DISTRICT MAP</span><span class="north">N ↑</span></div>
+        <svg id="minimap-svg" viewBox="0 0 200 132"></svg>
+        <div class="minimap-foot"><span><i></i> 核心区</span><span>4.36 km²</span></div>
+      </aside>
+
+      <nav class="landmark-dock" id="landmark-dock" aria-label="地标导航"></nav>
+
+      <footer class="footer-note"><span>OSM GIS · © OpenStreetMap contributors</span><i></i><span id="data-disclaimer">真实路网与建筑轮廓 · 缺失高度为可视化估算</span></footer>
+
+      <div class="loading-screen" id="loading-screen">
+        <div class="loading-orbit"><span></span><i></i></div>
+        <div class="loading-title">正在构建丽泽</div>
+        <div class="loading-sub" id="loading-sub">LOADING CITY GEOMETRY</div>
+        <div class="loading-bar"><span id="loading-progress"></span></div>
+        <div class="loading-percent" id="loading-percent">0%</div>
+      </div>
+
+      <div class="toast" id="toast" role="status"></div>
+    </div>
+  </body>
+</html>
